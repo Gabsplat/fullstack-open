@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Content from './components/Content'
+import Total from './components/Total'
 
-function App() {
+const App = () => {
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
+  const content = [
+    { title: part1, qty: exercises1 },
+    { title: part2, qty: exercises2 },
+    { title: part3, qty: exercises3 }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header title={course} />
+      <Content content={content}/>
+      <Total amount={exercises1 + exercises2 + exercises3}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
